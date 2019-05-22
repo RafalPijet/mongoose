@@ -1,0 +1,4 @@
+/.idea
+/node_modules
+mongoose.iml
+package-lock.json
