@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 // const MongoClient = require('mongodb').MongoClient;
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://root:root123@ds261096.mlab.com:61096/test123', {
+mongoose.connect('mongodb://test:root123@ds261096.mlab.com:61096/test123', {
     useNewUrlParser: true
 });
 
