@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 // const MongoClient = require('mongodb').MongoClient;
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://LopezPL:#TechnoParty2204$@cluster0-shard-00-00-yn33v.mongodb.net:27017,cluster0-shard-00-01-yn33v.mongodb.net:27017,cluster0-shard-00-02-yn33v.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true', {
+mongoose.connect('mongodb://LopezPL:#TechnoParty2204$@cluster0-shard-00-00-yn33v.mongodb.net:27017,cluster0-shard-00-01-yn33v.mongodb.net:27017,cluster0-shard-00-02-yn33v.mongodb.net:27017/test', {
     useNewUrlParser: true
 });
 
