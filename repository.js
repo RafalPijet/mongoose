@@ -1,10 +1,18 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-
+// const MongoClient = require('mongodb').MongoClient;
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://LopezPL:<password>@cluster0-yn33v.mongodb.net/test?retryWrites=true', {
+mongoose.connect('mongodb://LopezPL:#TechnoParty2204$@cluster0-shard-00-00-yn33v.mongodb.net:27017,cluster0-shard-00-01-yn33v.mongodb.net:27017,cluster0-shard-00-02-yn33v.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true', {
     useNewUrlParser: true
 });
+
+// const uri = "mongodb+srv://LopezPL:#TechnoParty2204$@cluster0-yn33v.mongodb.net/test?retryWrites=true";
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//     const collection = client.db("test").collection("devices");
+//     perform actions on the collection object
+    // client.close();
+// });
+const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     name: String,
