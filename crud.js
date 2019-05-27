@@ -21,9 +21,9 @@ const prepareUser = (name, username, password) => {
     });
 };
 
-const findAllUsers = () => {
+const findAllUsers = async () => {
     console.log('\nBEGIN ============ findAllUsers\n');
-    return User.find({}, (err, res) => {
+    return await User.find({}, (err, res) => {
 
         if (err) throw err;
         console.log('Actual database records are ' + res);
@@ -31,9 +31,9 @@ const findAllUsers = () => {
     })
 };
 
-const findByUsername = username => {
+const findByUsername = async username => {
     console.log('\nBEGIN ============ findByUsername\n');
-    return User.find({"username": username}, (err, res) => {
+    return await User.find({"username": username}, (err, res) => {
 
         if (err) throw err;
         console.log('Record you are looking for is ' + res);
@@ -41,9 +41,9 @@ const findByUsername = username => {
     })
 };
 
-const updateUserPassword = (username, newPassword) => {
+const updateUserPassword = async (username, newPassword) => {
     console.log('\nBEGIN ============ updateUserPassword\n');
-    return User.findOne({"username": username})
+    return await User.findOne({"username": username})
         .then(user => {
             console.log('Old password for user ' + user.name + ' is ' + user.password);
             user.password = newPassword;
@@ -51,8 +51,8 @@ const updateUserPassword = (username, newPassword) => {
             user.save(err => {
 
                 if (err) throw err;
-                console.log('Użytkownik ' + user.name + ' został pomyślnie zaktualizowany');
-            })
+            });
+            console.log('Użytkownik ' + user.name + ' został pomyślnie zaktualizowany');
             console.log('\nupdateUserPassword =========== DONE\n');
         })
         .catch(() => {
@@ -62,9 +62,9 @@ const updateUserPassword = (username, newPassword) => {
 
 };
 
-const updateUsername = (username, newUsername) => {
+const updateUsername = async (username, newUsername) => {
     console.log('\nBEGIN ============ updateUsername\n');
-    return User.findOneAndUpdate({"username": username}, {"username": newUsername}, {new: true}, (err, user) => {
+    return await User.findOneAndUpdate({"username": username}, {"username": newUsername}, {new: true}, (err, user) => {
 
         if (err) throw err;
         console.log('Nazwa użytkownika po aktualizacji to ' + user.username);
@@ -72,9 +72,9 @@ const updateUsername = (username, newUsername) => {
     })
 };
 
-const findUserAndDelete = username => {
+const findUserAndDelete = async username => {
     console.log('\nBEGIN ============ findUserAndDelete\n');
-    return User.findOne({"username": username})
+    return await User.findOne({"username": username})
         .then(user => {
             return user.remove(err => {
 

@@ -1,17 +1,8 @@
 const mongoose = require('mongoose');
-// const MongoClient = require('mongodb').MongoClient;
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://test:root123@ds261096.mlab.com:61096/test123', {
+mongoose.connect('mongodb://localhost/nodeappdatabase', {
     useNewUrlParser: true
 });
-
-// const uri = "mongodb+srv://LopezPL:#TechnoParty2204$@cluster0-yn33v.mongodb.net/test?retryWrites=true";
-// const client = new MongoClient(uri, { useNewUrlParser: true });
-// client.connect(err => {
-//     const collection = client.db("test").collection("devices");
-//     perform actions on the collection object
-    // client.close();
-// });
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
