@@ -20,4 +20,5 @@ Promise.all([
     crud.prepareUser("Benny", "Benny_the_boy", "6789"),
     crud.prepareUser("Mark", "Mark_the_boy", "987654321")])
     .then(() => runAll());
- 
+
+//Only for gitHub test
